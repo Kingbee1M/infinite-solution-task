@@ -1,0 +1,28 @@
+
+
+.divClass {
+    font-family: var(--font-open-sans);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vh;
+    height: 70vh;
+    background-color: rgba(240,248,255,1);
+    border-radius: 20px;
+}
+
+.wel {
+    font-size: 20px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin: 0 20px;
+}

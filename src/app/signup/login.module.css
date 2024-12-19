@@ -1,0 +1,32 @@
+.formDiv {
+    font-family: open sans;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vh;
+    height: 70vh;
+    background-color: rgba(240,248,255,1);
+    border-radius: 20px;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 80%;
+    gap: 20px;
+}
+
+.forms div {
+    width: 100%;
+}
+
+.forms input {
+    width: 90%;
+}
+
+.forms > div > div {
+   text-align: center;
+}

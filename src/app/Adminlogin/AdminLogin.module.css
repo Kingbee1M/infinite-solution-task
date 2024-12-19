@@ -1,0 +1,42 @@
+.wrapper {
+    height: 70vh;
+    width: 50vw;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--font-open-sans);
+}
+
+.wrapper > div {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.forms > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.forms > div label {
+    width: 100%;
+}
+
+.forms > div > input {
+    width: 100%;
+}
