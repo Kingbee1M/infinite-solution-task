@@ -1,0 +1,139 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-open-sans);
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+        'nav main'
+    ;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+}
+
+.nav > div {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main > div{
+    width: 95%;
+    height: 95%;
+
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+
+
+.head > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.head img {
+    width: 20px;
+    height: 20px
+}
+
+.ourProducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.ourProducts > div  {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.ourProducts > div > div {
+    width: 20%;
+}
+
+.ourProducts > div > div :hover {
+    box-shadow: 10px 15px 10px 10px rgba(185, 174, 174, 0.568);
+}
+
+.third {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.myOrders {
+    width: 30%;
+    height: 40%;
+    overflow: auto;
+    background-color: pink;
+    box-shadow: 10px 10px 15px grey ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tracking {
+    width: 30%;
+    height: 40%;
+    overflow: auto;
+    background-color: rgb(71, 71, 231);
+    box-shadow: 10px 10px 15px grey ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quotes {
+    width: 30%;
+    height: 40%;
+    overflow: auto;
+    background-color: rgb(141, 35, 141);
+    box-shadow: 10px 10px 15px grey ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,12 +1,14 @@
 .formDiv {
-    font-family: open sans;
+    font-family: var(--font-open-sans);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80vh;
     height: 70vh;
     background-color: rgba(240,248,255,1);
+    border: thin solid grey;
     border-radius: 20px;
+    box-shadow: 5px 10px 10px grey;
 }
 
 .forms {
@@ -29,4 +31,24 @@
 
 .forms > div > div {
    text-align: center;
+}
+
+.labelbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: last baseline;
+    gap: 2px;
+}
+
+.labelbtn label {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;    
+}
+
+.labelbtn input[type="radio"] {
+    transform: scale(0.5);
+    width: 30px;
 }

@@ -3,7 +3,8 @@ import styles from "./clientLogin.module.css"
 import useUserStore from "../../../stores/useUserStore"
 import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
-import { useState,useEffect } from "react";
+import { useState,} from "react";
+import { sendLoginForm } from "../../../functions/api/sendLoginform";
 
 const OpenSans = Open_Sans ({
     subsets: ["latin", "greek"],
@@ -11,36 +12,16 @@ const OpenSans = Open_Sans ({
     style: ["italic", "normal"]
 })
 
-export default function clientLogin () {
+export default function Login () {
 
-    const populateUser = useUserStore((state) => state.populateUser);
-    const user = useUserStore((state) => state.user);
+    const setApiResponse = useUserStore((state) => state.setApiResponse);
     const router = useRouter()
+    const [status, setStatus] = useState("")
 
-      useEffect(() => {
-        populateUser();
-      }, [populateUser]);
 
-      function keycheck(objA, objB) {
-        for (const key in objA) {
-            if (objA[key] !== objB[key]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-      function checkuser() {
-        for (let i = 0; i < user.length; i++) {
-            if (keycheck(formData, user[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     const [formData, setFormData] = useState({
-        fullName: "",
+        email: "",
         password: ""
     })
 
@@ -49,25 +30,36 @@ export default function clientLogin () {
         setFormData((prev) => ({ ...prev, [id]: value }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const isUserValid = checkuser()
-        if (isUserValid) {
-            router.push("/ClientDashboard");
+
+        try {
+            const response = await sendLoginForm(formData);
+            setApiResponse(response);
+            // console.log("apiResponse:", response);
+    
+            if (response.message === "Login successful") {
+                if (response.data.role === "Admin") {
+                    router.push("/AdminDashboard");
+                } else {
+                    router.push("/ClientDashboard");
+                }
+            } else {
+                setStatus("The password or email you entered is incorrect");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setStatus("An error occurred while logging in. Please try again.");
         }
-        else {
-            console.log("your userNmae or password was incorrect")
-        }
-        
-    }
+    };
 
     return(
         <div className={styles.wrapper}>
-            <div className="">Login to your client profile</div>
+            <div className>Login to your profile</div>
             <form className={styles.forms} onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="fullName">Username</label>
-                    <input type="text" id="fullName" placeholder="Your full name you registered with" value={formData.fullName} onChange={handleChange} required/>
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" placeholder="Eneter the email you registered with" value={formData.email} onChange={handleChange} required/>
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
@@ -75,11 +67,10 @@ export default function clientLogin () {
                 </div>
                 <div><button type="submit" >login</button></div>
             </form>
+            <div> {status} </div>
 
                     <style jsx global>{`
       body {
-        background-image: url('./images/diogo-nunes-2BAqw7DwMdg-unsplash.jpg');
-        background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;

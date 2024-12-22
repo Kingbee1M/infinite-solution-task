@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Infinite Solution Task
+*Developed by Idris Habeeb*
 
-## Getting Started
+This project is a client/contactor order management application built with Next.js. It allows users to create an account, log in, reply to quotes and create and submit orders to an API. The application features a responsive and user-friendly interface for inputting order details, including start and end dates, a description, and the total amount. It integrates with a backend API for processing orders and uses a global state management store to manage user data efficiently. This project demonstrates the use of modern web development tools and techniques, including React hooks, CSS modules, and custom API utility functions for seamless integration with external services.
 
-First, run the development server:
+The app features:
+- A responsive, user-friendly interface.
+- Integration with a backend API for order processing.
+- Efficient global state management using a custom store.
+- Modern development techniques like React hooks, CSS modules, and API utilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- User authentication (signup and login).
+- Dashboard for clients.
+- Ability to respond to quotes.
+- Form-based order creation and submission.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
+- **Next.js**: Framework for server-side rendering and React.
+- **CSS Modules**: Scoped and maintainable styles.
+- **Axios**: API request handling.
+- **Zustand**: Global state management.
+- **Node.js**: JavaScript runtime environment
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Prerequisites
+- Node.js (version 15)
+- npm (Node Package Manager)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Kingbee1M/infinite-solution-task/tree/main/src/app

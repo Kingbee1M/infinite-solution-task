@@ -19,7 +19,7 @@ export default function Home() {
       <div  className={styles.wel}>Welcome to david's Fish feed Production industry</div>
       <div>would you like to login as a :</div>
       <div className={styles.choice}>
-        <div><Link href="/ClientLogin"><button>Client</button></Link></div>
+        <div><Link href="/login"><button>Client</button></Link></div>
         <div><Link href="/Adminlogin"><button className={styles.button}>Admin</button></Link></div>
       </div>
       <div>don't have an account? <Link href="/signup"><button>sign up</button></Link></div>
