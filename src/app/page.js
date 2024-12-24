@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className={styles.divClass}>
-      <div  className={styles.wel}>Welcome to david's Fish feed Production industry</div>
+      <div  className={styles.wel}>Welcome to David industry</div>
       <div>would you like to login as a :</div>
       <div className={styles.choice}>
         <div><Link href="/login"><button>Client</button></Link></div>
@@ -25,8 +25,7 @@ export default function Home() {
       <div>don't have an account? <Link href="/signup"><button>sign up</button></Link></div>
         <style jsx global>{`
       body {
-        background-image: url('./images/diogo-nunes-2BAqw7DwMdg-unsplash.jpg');
-        background-size: cover;
+
         display: flex;
         justify-content: center;
         align-items: center;

@@ -17,6 +17,7 @@ export default function CreateOrder () {
     const users = useUserStore((state) => state.apiResponse)
     const setApiResponse = useUserStore((state) => state.setApiResponse);
     const quoteId = users[1].data.user.id || null
+    const [status, setStatus] = useState("")
     const [orderData, setOrderData] = useState({
         startDate: "",
         endDate: "",
@@ -42,6 +43,14 @@ export default function CreateOrder () {
             console.log(orderData);
             const response = await sendOrder(orderData);
             setApiResponse(response);
+            setOrderData({
+                startDate: "",
+                endDate: "",
+                totalAmount: "",
+                description: "",
+            })
+    
+            setStatus("Your order has been sent")
         } catch (error) {
             console.error("Error:", error)
         }
@@ -87,6 +96,7 @@ export default function CreateOrder () {
                                 <div><textarea id="description" rows="5" cols="30" maxLength="200" wrap="hard" spellCheck="true" value={orderData.description} onChange={handleChange} placeholder="i would like to order...." required /></div>
                             </div>
                             <div><button type="submit" onClick={handleSubmit}>Send order</button></div>
+                            <div>{status}</div>
                         </form>
                     </div>
                 </div>
