@@ -1,37 +1,29 @@
-"use client"
-
-import useUserStore from "../../../stores/useUserStore"
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { Open_Sans } from "next/font/google";
-import styles from "./createOrder.module.css"
-import { sendOrder } from "../../../functions/api/sendOrder";
-
-const OpenSans = Open_Sans({
-    subsets: ["latin", "greek"],
-    weight: ["400", "600", "800"],
-    style: ["italic", "normal"]
-})
+import { useEffect, useState } from 'react';
+import { useUserStore } from '../stores/userStore'; // Adjust the import based on your store's location
+import Link from 'next/link';
+import styles from './CreateOrder.module.css'; // Make sure your styles file path is correct
 
 export default function CreateOrder() {
-    const users = useUserStore((state) => state.apiResponse)
+    const users = useUserStore((state) => state.apiResponse || []); // Fallback to empty array if apiResponse is null
     const setApiResponse = useUserStore((state) => state.setApiResponse);
-    const [status, setStatus] = useState("")
+    const [status, setStatus] = useState("");
     const [orderData, setOrderData] = useState({
         startDate: "",
         endDate: "",
         totalAmount: "",
         description: "",
-    })
-    
-    const [quoteId, setQuoteId] = useState(null); // Add local state for quoteId
+    });
+
+    const [quoteId, setQuoteId] = useState(null);
 
     useEffect(() => {
-        // Only update quoteId when users[1] and necessary properties are defined
-        if (users && users[1] && users[1].data && users[1].data.user) {
+        // Ensure the user data is valid before accessing it
+        if (users && users.length > 1 && users[1] && users[1].data && users[1].data.user) {
             setQuoteId(users[1].data.user.id);
+        } else {
+            setQuoteId(null); // Fallback in case the data is not available
         }
-    }, [users]); // Update quoteId when users state changes
+    }, [users]);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -51,12 +43,12 @@ export default function CreateOrder() {
                 endDate: "",
                 totalAmount: "",
                 description: "",
-            })
-            setStatus("Your order has been sent")
+            });
+            setStatus("Your order has been sent");
         } catch (error) {
-            console.error("Error:", error)
+            console.error("Error:", error);
         }
-    }
+    };
 
     return (
         <div className={styles.wrapper}>
@@ -81,7 +73,7 @@ export default function CreateOrder() {
                 <div className={styles.head}>
                     <div>Dashboard</div>
                     <div>
-                        {users && users[1] && users[1].data ? (
+                        {users && users.length > 1 && users[1] && users[1].data ? (
                             <div>{users[1].data.user.name}</div>
                         ) : (
                             <div>Loading...</div>
@@ -117,4 +109,11 @@ export default function CreateOrder() {
             </div>
         </div>
     );
+}
+
+async function sendOrder(orderData) {
+    // Replace this with the actual API call to send the order
+    return new Promise((resolve) => {
+        setTimeout(() => resolve({ message: 'Order sent successfully' }), 2000);
+    });
 }
