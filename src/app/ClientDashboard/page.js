@@ -11,7 +11,7 @@ const OpenSans = Open_Sans ({
     subsets: ["greek", "latin"]
 })
 export default function ClientDashboard () {
-    const userData = useUserStore((state) => state.apiResponse)
+    const userData = useUserStore((state) => state.apiResponse?.[1]?.data?.user || null)
     const userOrder = useUserStore((state) => state.apiResponse[0])
     console.log(userData);
     
