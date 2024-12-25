@@ -2,7 +2,7 @@
 
 // import Image from "next/image";
 import { Open_Sans } from "next/font/google";
-import styles from "../app/styles/landingPage.module.css"
+import styles from "./landingPage.module.css"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
