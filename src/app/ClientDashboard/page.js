@@ -27,7 +27,7 @@ export default function ClientDashboard () {
                 <div className={styles.head}>
                     <div>Dashboard</div>
                     <div>
-                        {userData&&<div>{userData[1].data.user.name}</div>}
+                        {userData&&<div>{userData[1].data?.user?.name}</div>}
                         <img src="../images/Empty Profile Icon.jpeg" />
                     </div>
                     </div>

@@ -64,7 +64,7 @@ export default function CreateOrder() {
                     <div>Dashboard</div>
                     <div>
                         {users && users.length > 1 && users[1] && users[1].data ? (
-                            <div>{users[1].data.user.name}</div>
+                            <div>{users[1].data?.user?.name}</div>
                         ) : (
                             <div>Loading...</div>
                         )}
