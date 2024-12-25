@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styles from "./createOrder.module.css"
 
 export default function CreateOrder() {
-    const users = useUserStore((state) => state.apiResponse || []); // Fallback to empty array if apiResponse is null
+    const users = useUserStore((state) => state.apiResponse);
     const setApiResponse = useUserStore((state) => state.setApiResponse);
     const [status, setStatus] = useState("");
     const [orderData, setOrderData] = useState({
@@ -55,21 +55,9 @@ export default function CreateOrder() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.nav}>
-                <div className={styles.logo}>
-                    <Link href="/ClientDashboard">
-                        <img src="/images/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" title="Dashboard" />
-                    </Link>
-                </div>
-                <div className={styles.navList}>
-                    <Link href="/ClientDashboard">
-                        <img src="/images/history_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" />
-                    </Link>
-                </div>
-                <div className={styles.logOut}>
-                    <Link href="/createOrder">
-                        <img src="/images/add_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" title="create new order" />
-                    </Link>
-                </div>
+                <div className={styles.logo}><Link href="/ClientDashboard"><img src="../images/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" title="Dashboard" /></Link></div>
+                <div className={styles.navList}><Link href="/ClientDashboard"><img src="../images/history_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" /></Link></div>
+                <div className={styles.logOut}><Link href="/createOrder"><img src="../images/add_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" title="create new order" /></Link></div>
             </div>
             <div className={styles.main}>
                 <div className={styles.head}>
