@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./signup.module.css";
+import styles from "../app/styles/signup.module.css";
 import useUserStore from "../../../stores/useUserStore";
 import { useRouter } from "next/navigation";
 import { sendFormData } from "../../../functions/api/sendFormData";

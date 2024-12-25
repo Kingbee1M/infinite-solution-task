@@ -19,8 +19,7 @@ export default function Home() {
       <div  className={styles.wel}>Welcome to David industry</div>
       <div>would you like to login as a :</div>
       <div className={styles.choice}>
-        <div><Link href="/login"><button>Client</button></Link></div>
-        <div><Link href="/Adminlogin"><button className={styles.button}>Admin</button></Link></div>
+        <div><Link href="/login"><button>login</button></Link></div>
       </div>
       <div>don't have an account? <Link href="/signup"><button>sign up</button></Link></div>
         <style jsx global>{`

@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "./AdminLogin.module.css"
+import styles from "../app/styles/AdminLogin.module.css"
 import useUserStore from "../../../stores/useUserStore"
 import { Open_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
