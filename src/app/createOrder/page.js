@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from 'react';
 import { useUserStore } from '../stores/userStore'; // Adjust the import based on your store's location
 import Link from 'next/link';
