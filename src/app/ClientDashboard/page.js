@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "../app/styles/ClientDashboard.module.css"
+import styles from "./ClientDashboard.module.css"
 import { Open_Sans } from "next/font/google"
 import useUserStore from "../../../stores/useUserStore"
 import Link from "next/link"
